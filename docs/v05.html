@@ -22,6 +22,21 @@
 			binary = ["0000","0001","0010","0011","0100","0101","0110","0111","1000","1001"]
 			return(binary[decimal])
 		}
+		function dec2bin2 (decimal) {
+			var quotient = decimal
+			var output = '' 
+			while (quotient > 0) {
+				remainder = quotient % 2
+				if (remainder == 1)
+					{output = '1' + output}
+				else 
+					{output = '0' + output}
+				quotient = math.floor(quotient/2)
+				
+			}
+			while (output.length < 4) {output = '0' + output}
+			return(output)
+		}
     </script>
     </head>
     <body>
