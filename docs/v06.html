@@ -16,22 +16,11 @@
             //for now just display the number in a <p> element
             document.getElementById("decimal_input").innerHTML=number
 			var bcd = dec2bin(number)
-			document.getElementById("binary_output").innerHTML=bin
-			
-			//send binary number to function bin2ssd()
-			document.getElementById("bin2ssd_input").innerHTML=bin
-			var ssd = bin2ssd(bin)
-			document.getElementById("bin2ssd_output").innerHTML=ssd
-			
-			//send ssd signals to function illuminated_segments()
-			document.getElementById("illuminate_input").innerHTML=ssd
-			illuminate(ssd)
-			var bcd = dec2bin(number)
-			document.getElementById("illuminate_output").innerHTML='done'
+			document.getElementById("binary_output").innerHTML=bcd
         }
 		function dec2bin (decimal) {
-			binary = ["0000","0001","0010","0011","0100","0101","0110","0111","1000","1001"]
-			return(binary[decimal])
+			var binary_numbers = ["0000","0001","0010","0011","0100","0101","0110","0111","1000","1001"]
+			return(binary_numbers[decimal])
 		}
 		function dec2bin2 (decimal) {
 			var quotient = decimal
@@ -51,7 +40,7 @@
     </script>
     </head>
     <body>
-        <h2>Version 7 Stubs for Parts 3 and 4</h2>
+        <h2>Version 4 Adding Input Keypad</h2>
         <table class="standardTable">
             <tr> <td class="blackbox"><h3> Keypad</h3>
                 <button type="button" onclick="display(1)">1</button>
@@ -65,18 +54,11 @@
                 <button type="button" onclick="display(9)">9</button>
                 <button type="button" onclick="display(0)">0</button>
                 </td>
-				<td class="blackbox"><h3>Decimal to Binary</h3><p id="decimal_input">???</p> 
-					<p id="binary_output">???</p> </td>
-				
-				<td class="blackbox"><h3>Binary to SSD Signals</h3></td>
-				<p id="binary2ssd_input"></p>
-				<p id="binary2ssd_output"></p> </td>
-		
-				<td class="blackbox"><h3>Illuminate Segments</h3></td>
-				<p id="illuminate_input"></p>
-				<p id="illuminate_output"></p>
-			</td>
+				<td class="blackbox"><h3>Decimal to Binary</h3><p id="decimal_input">???</p> <p id="binary_output">???</p> </td>
+                <td class="blackbox">Binary to SSD Signals</td>
+                <td class="blackbox">Illuminate Segments</td>
             </tr>
 		</table>    
     </body>
 </html>
+
